@@ -1,0 +1,11 @@
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\bin\Debug\SmartTableEditor.exe.config
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\bin\Debug\SmartTableEditor.exe
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\bin\Debug\SmartTableEditor.pdb
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.Main.resources
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.Properties.Resources.resources
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.exe
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.pdb
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.CreateTable.resources
