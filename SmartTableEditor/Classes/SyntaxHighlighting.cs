@@ -11,27 +11,36 @@ namespace SmartTableEditor.Classes
 {
     class SyntaxHighlighting
     {
-        public void Highlighting(RichTextBox richTextBox,
-                                 string[] collectionOne,
-                                 Color first)
+        // Цвет по умолчанию
+        private readonly Color def = Color.FromArgb(215, 220, 226);
+
+        private void ForeachList(RichTextBox richTextBox,string[] list, Color color)
         {
-            Color def = Color.FromArgb(215, 220, 226);
-
-            int currentSelStart = richTextBox.SelectionStart;
-            int currentSelLength = richTextBox.SelectionLength;
-
-            richTextBox.SelectAll();
-            richTextBox.SelectionColor = def;// Цвет по умолчанию
-
-            foreach (var item in collectionOne)
+            foreach (var item in list)
             {
                 var matches = Regex.Matches(richTextBox.Text, $@"\b{item}\b");
                 foreach (var match in matches.Cast<Match>())
                 {
                     richTextBox.Select(match.Index, match.Length);
-                    richTextBox.SelectionColor = first;// Цвет для первой коллекции
+                    richTextBox.SelectionColor = color;
                 }
             }
+        }
+
+        public void Highlighting(RichTextBox richTextBox,
+                                 string[] collectionOne,
+                                 Color first)
+        {
+            int currentSelStart = richTextBox.SelectionStart;
+            int currentSelLength = richTextBox.SelectionLength;
+
+            richTextBox.SelectAll();
+            richTextBox.SelectionColor = def;
+
+            ForeachList(richTextBox, collectionOne, first);
+
+            richTextBox.Select(currentSelStart, currentSelLength);
+            richTextBox.SelectionColor = def;
         }
 
         public void Highlighting(RichTextBox richTextBox,
@@ -40,33 +49,14 @@ namespace SmartTableEditor.Classes
                                  Color first,
                                  Color second)
         {
-            Color def = Color.FromArgb(215, 220, 226);
-
             int currentSelStart = richTextBox.SelectionStart;
             int currentSelLength = richTextBox.SelectionLength;
 
             richTextBox.SelectAll();
-            richTextBox.SelectionColor = def;// Цвет по умолчанию
+            richTextBox.SelectionColor = def;
 
-            foreach (var item in collectionOne)
-            {
-                var matches = Regex.Matches(richTextBox.Text, $@"\b{item}\b");
-                foreach (var match in matches.Cast<Match>())
-                {
-                    richTextBox.Select(match.Index, match.Length);
-                    richTextBox.SelectionColor = first;// Цвет для первой коллекции
-                }
-            }
-
-            foreach (var item in collectionTwo)
-            {
-                var matches2 = Regex.Matches(richTextBox.Text, $@"\b{item}\b");
-                foreach (var match in matches2.Cast<Match>())
-                {
-                    richTextBox.Select(match.Index, match.Length);
-                    richTextBox.SelectionColor = second;// Цвет для второй коллекции
-                }
-            }
+            ForeachList(richTextBox, collectionOne, first);
+            ForeachList(richTextBox, collectionTwo, second);
 
             richTextBox.Select(currentSelStart, currentSelLength);
             richTextBox.SelectionColor = def;
@@ -80,43 +70,15 @@ namespace SmartTableEditor.Classes
                                  Color second,
                                  Color third)
         {
-            Color def = Color.FromArgb(215, 220, 226);
-
             int currentSelStart = richTextBox.SelectionStart;
             int currentSelLength = richTextBox.SelectionLength;
 
             richTextBox.SelectAll();
-            richTextBox.SelectionColor = def;// Цвет по умолчанию
+            richTextBox.SelectionColor = def;
 
-            foreach (var item in collectionOne)
-            {
-                var matches = Regex.Matches(richTextBox.Text, $@"\b{item}\b");
-                foreach (var match in matches.Cast<Match>())
-                {
-                    richTextBox.Select(match.Index, match.Length);
-                    richTextBox.SelectionColor = first;// Цвет для первой коллекции
-                }
-            }
-
-            foreach (var item in collectionTwo)
-            {
-                var matches2 = Regex.Matches(richTextBox.Text, $@"\b{item}\b");
-                foreach (var match in matches2.Cast<Match>())
-                {
-                    richTextBox.Select(match.Index, match.Length);
-                    richTextBox.SelectionColor = second;// Цвет для второй коллекции
-                }
-            }
-
-            foreach (var item in collectionThree)
-            {
-                var matches2 = Regex.Matches(richTextBox.Text, $@"\b{item}\b");
-                foreach (var match in matches2.Cast<Match>())
-                {
-                    richTextBox.Select(match.Index, match.Length);
-                    richTextBox.SelectionColor = third;// Цвет для третьей коллекции
-                }
-            }
+            ForeachList(richTextBox, collectionOne, first);
+            ForeachList(richTextBox, collectionTwo, second);
+            ForeachList(richTextBox, collectionThree, third);
 
             richTextBox.Select(currentSelStart, currentSelLength);
             richTextBox.SelectionColor = def;

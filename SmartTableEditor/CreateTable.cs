@@ -126,11 +126,11 @@ namespace SmartTableEditor
         private protected SyntaxHighlighting Syntax = new SyntaxHighlighting();
         private void richTextBoxClasses_TextChanged(object sender, EventArgs e)
         {
-            string[] collectionGold = { "string", "int", "datetime", "List", };
+            string[] collectionGold = { "string", "int", "datetime", "List"};
 
             Syntax.Highlighting(richTextBoxClasses,
                 collectionGold,
-                ColorTranslator.FromHtml("#43dde6")
+                Color.FromArgb(255, 191, 76)
                 );
         }
         #endregion
