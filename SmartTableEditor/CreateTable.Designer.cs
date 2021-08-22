@@ -31,13 +31,17 @@ namespace SmartTableEditor
         {
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.btnFC = new System.Windows.Forms.Button();
+            this.btnSQL = new System.Windows.Forms.Button();
+            this.panelClasses = new System.Windows.Forms.Panel();
+            this.richTextBoxClasses = new System.Windows.Forms.RichTextBox();
+            this.panelLeft = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnGenerateScript = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxField = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBoxType = new System.Windows.Forms.ComboBox();
             this.btnCloseTable = new System.Windows.Forms.Button();
             this.btnAddField = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,10 +49,11 @@ namespace SmartTableEditor
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddTable = new System.Windows.Forms.Button();
             this.panelWorkArea = new System.Windows.Forms.Panel();
-            this.btnSQL = new System.Windows.Forms.Button();
-            this.btnFC = new System.Windows.Forms.Button();
+            this.textBoxType = new System.Windows.Forms.TextBox();
             this.panelMain.SuspendLayout();
             this.panelTop.SuspendLayout();
+            this.panelClasses.SuspendLayout();
+            this.panelLeft.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,10 +61,8 @@ namespace SmartTableEditor
             // 
             // panelMain
             // 
-            this.panelMain.Controls.Add(this.panelWorkArea);
-            this.panelMain.Controls.Add(this.panel3);
-            this.panelMain.Controls.Add(this.panel2);
-            this.panelMain.Controls.Add(this.panel1);
+            this.panelMain.Controls.Add(this.panelLeft);
+            this.panelMain.Controls.Add(this.panelClasses);
             this.panelMain.Controls.Add(this.panelTop);
             this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelMain.Location = new System.Drawing.Point(0, 0);
@@ -70,22 +73,82 @@ namespace SmartTableEditor
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(28)))), ((int)(((byte)(40)))));
-            this.panelTop.Controls.Add(this.btnFC);
             this.panelTop.Controls.Add(this.btnSQL);
+            this.panelTop.Controls.Add(this.btnFC);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1058, 40);
             this.panelTop.TabIndex = 1;
             // 
+            // btnFC
+            // 
+            this.btnFC.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFC.FlatAppearance.BorderSize = 0;
+            this.btnFC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(76)))));
+            this.btnFC.Location = new System.Drawing.Point(0, 0);
+            this.btnFC.Name = "btnFC";
+            this.btnFC.Size = new System.Drawing.Size(60, 40);
+            this.btnFC.TabIndex = 7;
+            this.btnFC.Text = "FC";
+            this.btnFC.UseVisualStyleBackColor = true;
+            // 
+            // btnSQL
+            // 
+            this.btnSQL.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSQL.FlatAppearance.BorderSize = 0;
+            this.btnSQL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSQL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(76)))));
+            this.btnSQL.Location = new System.Drawing.Point(60, 0);
+            this.btnSQL.Name = "btnSQL";
+            this.btnSQL.Size = new System.Drawing.Size(60, 40);
+            this.btnSQL.TabIndex = 8;
+            this.btnSQL.Text = "SQL";
+            this.btnSQL.UseVisualStyleBackColor = true;
+            // 
+            // panelClasses
+            // 
+            this.panelClasses.Controls.Add(this.richTextBoxClasses);
+            this.panelClasses.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelClasses.Location = new System.Drawing.Point(858, 40);
+            this.panelClasses.Name = "panelClasses";
+            this.panelClasses.Size = new System.Drawing.Size(200, 725);
+            this.panelClasses.TabIndex = 27;
+            // 
+            // richTextBoxClasses
+            // 
+            this.richTextBoxClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.richTextBoxClasses.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxClasses.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxClasses.ForeColor = System.Drawing.SystemColors.Info;
+            this.richTextBoxClasses.Location = new System.Drawing.Point(0, 0);
+            this.richTextBoxClasses.Name = "richTextBoxClasses";
+            this.richTextBoxClasses.Size = new System.Drawing.Size(200, 725);
+            this.richTextBoxClasses.TabIndex = 0;
+            this.richTextBoxClasses.Text = "";
+            this.richTextBoxClasses.TextChanged += new System.EventHandler(this.richTextBoxClasses_TextChanged);
+            // 
+            // panelLeft
+            // 
+            this.panelLeft.Controls.Add(this.panelWorkArea);
+            this.panelLeft.Controls.Add(this.panel3);
+            this.panelLeft.Controls.Add(this.panel2);
+            this.panelLeft.Controls.Add(this.panel1);
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelLeft.Location = new System.Drawing.Point(0, 40);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(858, 725);
+            this.panelLeft.TabIndex = 28;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnGenerateScript);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 186);
+            this.panel3.Location = new System.Drawing.Point(0, 146);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1058, 58);
-            this.panel3.TabIndex = 25;
+            this.panel3.Size = new System.Drawing.Size(858, 58);
+            this.panel3.TabIndex = 28;
             // 
             // btnGenerateScript
             // 
@@ -96,24 +159,24 @@ namespace SmartTableEditor
             this.btnGenerateScript.Location = new System.Drawing.Point(16, 7);
             this.btnGenerateScript.Name = "btnGenerateScript";
             this.btnGenerateScript.Size = new System.Drawing.Size(582, 40);
-            this.btnGenerateScript.TabIndex = 18;
+            this.btnGenerateScript.TabIndex = 6;
             this.btnGenerateScript.Text = "Сформировать";
             this.btnGenerateScript.UseVisualStyleBackColor = false;
             this.btnGenerateScript.Visible = false;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.textBoxType);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.textBoxField);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.comboBoxType);
             this.panel2.Controls.Add(this.btnCloseTable);
             this.panel2.Controls.Add(this.btnAddField);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 72);
+            this.panel2.Location = new System.Drawing.Point(0, 32);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1058, 114);
-            this.panel2.TabIndex = 24;
+            this.panel2.Size = new System.Drawing.Size(858, 114);
+            this.panel2.TabIndex = 27;
             this.panel2.Visible = false;
             // 
             // label3
@@ -130,7 +193,8 @@ namespace SmartTableEditor
             this.textBoxField.Location = new System.Drawing.Point(137, 6);
             this.textBoxField.Name = "textBoxField";
             this.textBoxField.Size = new System.Drawing.Size(461, 26);
-            this.textBoxField.TabIndex = 13;
+            this.textBoxField.TabIndex = 2;
+            this.textBoxField.Text = "ФИО";
             // 
             // label2
             // 
@@ -140,17 +204,6 @@ namespace SmartTableEditor
             this.label2.Size = new System.Drawing.Size(87, 20);
             this.label2.TabIndex = 19;
             this.label2.Text = "Имя поля";
-            // 
-            // comboBoxType
-            // 
-            this.comboBoxType.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBoxType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.comboBoxType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBoxType.FormattingEnabled = true;
-            this.comboBoxType.Location = new System.Drawing.Point(137, 39);
-            this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(461, 26);
-            this.comboBoxType.TabIndex = 14;
             // 
             // btnCloseTable
             // 
@@ -162,9 +215,10 @@ namespace SmartTableEditor
             this.btnCloseTable.Location = new System.Drawing.Point(313, 71);
             this.btnCloseTable.Name = "btnCloseTable";
             this.btnCloseTable.Size = new System.Drawing.Size(285, 40);
-            this.btnCloseTable.TabIndex = 16;
+            this.btnCloseTable.TabIndex = 5;
             this.btnCloseTable.Text = "Закрыть таблицу";
             this.btnCloseTable.UseVisualStyleBackColor = false;
+            this.btnCloseTable.Click += new System.EventHandler(this.btnCloseTable_Click);
             // 
             // btnAddField
             // 
@@ -175,9 +229,10 @@ namespace SmartTableEditor
             this.btnAddField.Location = new System.Drawing.Point(16, 71);
             this.btnAddField.Name = "btnAddField";
             this.btnAddField.Size = new System.Drawing.Size(285, 40);
-            this.btnAddField.TabIndex = 15;
+            this.btnAddField.TabIndex = 4;
             this.btnAddField.Text = "Добавить";
             this.btnAddField.UseVisualStyleBackColor = false;
+            this.btnAddField.Click += new System.EventHandler(this.btnAddField_Click);
             // 
             // panel1
             // 
@@ -185,17 +240,18 @@ namespace SmartTableEditor
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnAddTable);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 40);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1058, 32);
-            this.panel1.TabIndex = 23;
+            this.panel1.Size = new System.Drawing.Size(858, 32);
+            this.panel1.TabIndex = 26;
             // 
             // textBoxTable
             // 
             this.textBoxTable.Location = new System.Drawing.Point(137, 3);
             this.textBoxTable.Name = "textBoxTable";
             this.textBoxTable.Size = new System.Drawing.Size(355, 26);
-            this.textBoxTable.TabIndex = 14;
+            this.textBoxTable.TabIndex = 0;
+            this.textBoxTable.Text = "Пациент";
             // 
             // label1
             // 
@@ -215,7 +271,7 @@ namespace SmartTableEditor
             this.btnAddTable.Location = new System.Drawing.Point(498, 3);
             this.btnAddTable.Name = "btnAddTable";
             this.btnAddTable.Size = new System.Drawing.Size(100, 26);
-            this.btnAddTable.TabIndex = 15;
+            this.btnAddTable.TabIndex = 1;
             this.btnAddTable.Text = "ОК";
             this.btnAddTable.UseVisualStyleBackColor = false;
             this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
@@ -223,42 +279,26 @@ namespace SmartTableEditor
             // panelWorkArea
             // 
             this.panelWorkArea.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelWorkArea.Location = new System.Drawing.Point(0, 244);
+            this.panelWorkArea.Location = new System.Drawing.Point(0, 204);
             this.panelWorkArea.Name = "panelWorkArea";
-            this.panelWorkArea.Size = new System.Drawing.Size(1058, 521);
-            this.panelWorkArea.TabIndex = 26;
+            this.panelWorkArea.Size = new System.Drawing.Size(858, 521);
+            this.panelWorkArea.TabIndex = 29;
             // 
-            // btnSQL
+            // textBoxType
             // 
-            this.btnSQL.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSQL.FlatAppearance.BorderSize = 0;
-            this.btnSQL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSQL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(76)))));
-            this.btnSQL.Location = new System.Drawing.Point(0, 0);
-            this.btnSQL.Name = "btnSQL";
-            this.btnSQL.Size = new System.Drawing.Size(60, 40);
-            this.btnSQL.TabIndex = 0;
-            this.btnSQL.Text = "SQL";
-            this.btnSQL.UseVisualStyleBackColor = true;
-            // 
-            // btnFC
-            // 
-            this.btnFC.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnFC.FlatAppearance.BorderSize = 0;
-            this.btnFC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(76)))));
-            this.btnFC.Location = new System.Drawing.Point(60, 0);
-            this.btnFC.Name = "btnFC";
-            this.btnFC.Size = new System.Drawing.Size(60, 40);
-            this.btnFC.TabIndex = 1;
-            this.btnFC.Text = "FC";
-            this.btnFC.UseVisualStyleBackColor = true;
+            this.textBoxType.Location = new System.Drawing.Point(137, 38);
+            this.textBoxType.Name = "textBoxType";
+            this.textBoxType.Size = new System.Drawing.Size(461, 26);
+            this.textBoxType.TabIndex = 3;
+            this.textBoxType.Text = "string";
             // 
             // CreateTable
             // 
+            this.AcceptButton = this.btnAddField;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.CancelButton = this.btnCloseTable;
             this.ClientSize = new System.Drawing.Size(1058, 765);
             this.Controls.Add(this.panelMain);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
@@ -269,6 +309,8 @@ namespace SmartTableEditor
             this.Load += new System.EventHandler(this.CreateTable_Load);
             this.panelMain.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
+            this.panelClasses.ResumeLayout(false);
+            this.panelLeft.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -282,21 +324,24 @@ namespace SmartTableEditor
 
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.Panel panelTop;
+        private System.Windows.Forms.Button btnFC;
+        private System.Windows.Forms.Button btnSQL;
+        private System.Windows.Forms.Panel panelClasses;
+        private System.Windows.Forms.RichTextBox richTextBoxClasses;
+        private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Panel panelWorkArea;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnGenerateScript;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxField;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxType;
         private System.Windows.Forms.Button btnCloseTable;
         private System.Windows.Forms.Button btnAddField;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxTable;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddTable;
-        private System.Windows.Forms.Panel panelWorkArea;
-        private System.Windows.Forms.Button btnSQL;
-        private System.Windows.Forms.Button btnFC;
+        private System.Windows.Forms.TextBox textBoxType;
     }
 }

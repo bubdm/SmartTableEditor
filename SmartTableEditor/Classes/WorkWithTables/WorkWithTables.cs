@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace SmartTableEditor.Classes.WorkWithTables
 {
-    public enum _Enum { SQL, FC };
+    public enum SelectArh { SQL, FC };
 
     public class WorkWithTables
     {
-        public ITable workWithTables;
+        public ITable Table;
 
-        public WorkWithTables(_Enum val)
+        public WorkWithTables(SelectArh val)
         {
-            if (val == _Enum.SQL)
-                workWithTables = new SQL();
-            else if (val == _Enum.FC)
-                workWithTables = new FirsCode();
+            if (val == SelectArh.SQL)
+                Table = new SQL();
+            else if (val == SelectArh.FC)
+                Table = new FirsCode();
         }
     }
 }

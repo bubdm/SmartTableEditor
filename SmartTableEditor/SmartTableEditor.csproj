@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\SyntaxHighlighting.cs" />
     <Compile Include="Classes\WorkWithTables\FirsCode.cs" />
     <Compile Include="Classes\WorkWithTables\ITable.cs" />
     <Compile Include="Classes\WorkWithTables\SQL.cs" />
