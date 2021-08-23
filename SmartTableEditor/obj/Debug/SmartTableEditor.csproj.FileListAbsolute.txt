@@ -9,3 +9,17 @@ C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTab
 C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.exe
 C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.pdb
 C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.CreateTable.resources
+C:\Users\User\Source\Repos\SmartTableEditor\SmartTableEditor\bin\Debug\SmartTableEditor.exe.config
+C:\Users\User\Source\Repos\SmartTableEditor\SmartTableEditor\bin\Debug\SmartTableEditor.exe
+C:\Users\User\Source\Repos\SmartTableEditor\SmartTableEditor\bin\Debug\SmartTableEditor.pdb
+C:\Users\User\Source\Repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.CreateTable.resources
+C:\Users\User\Source\Repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.Main.resources
+C:\Users\User\Source\Repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.Properties.Resources.resources
+C:\Users\User\Source\Repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.csproj.GenerateResource.cache
+C:\Users\User\Source\Repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.csproj.CoreCompileInputs.cache
+C:\Users\User\Source\Repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.exe
+C:\Users\User\Source\Repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.pdb
+C:\Users\User\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\SmartTableEditor\SmartTableEditor\obj\Debug\SmartTableEditor.csproj.CopyComplete

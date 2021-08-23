@@ -1,5 +1,6 @@
 ﻿using SmartTableEditor.Classes;
 using SmartTableEditor.Classes.WorkWithTables;
+using SmartTableEditor.Classes.WriteToJSONFile;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,19 +15,9 @@ namespace SmartTableEditor
 {
     public partial class CreateTable : Form
     {
-        // Класс для генерации таблиц
-        public class Table
-        {
-            public Table(string name)
-            {
-                Name = name;
-                Fields = new Dictionary<string, string>();
-            }
-
-            public string Name { get; set; }
-            public Dictionary<string,string> Fields { get; set; }
-        }
         private List<Table> _tables = new List<Table>();
+
+        private List<Feilds> _feilds = new List<Feilds>();
 
         public CreateTable()
         {
@@ -74,6 +65,15 @@ namespace SmartTableEditor
             }
             richTextBoxClasses.Text = stringBuilder.ToString();
         }
+
+        void LoadTypesInTextBox(TextBox field, TextBox type)
+        {
+            foreach (var item in _feilds)
+            {
+                if (field.Text.ToLower() == item.NameFeild)
+                    type.Text = item.Value;
+            }
+        }
         #endregion
 
 
@@ -84,6 +84,8 @@ namespace SmartTableEditor
                 item.Width = item.Text.Count() * 30;
             }
             textBoxTable.Focus();
+
+            new JSON("Resource/Settings/AutoInserTypes.json").Read(ref _feilds);
         }
 
 
@@ -108,7 +110,12 @@ namespace SmartTableEditor
                 _tables.FirstOrDefault(c => c.Name == textBoxTable.Text).Fields.Add(textBoxField.Text, textBoxType.Text);
             }
             catch (Exception)
-            {  }
+            { }
+
+            // Проверка списка, если пустой, то добавить запись. При других манипуляциях с циклами, выдаёт ошибку связанную с изменением списка
+            if (_feilds.FirstOrDefault(item => item.NameFeild.ToLower() == textBoxField.Text.ToLower()) is null)
+                _feilds.Add(new Feilds(textBoxField.Text.ToLower(), textBoxType.Text.ToLower()));
+
             textBoxType.Clear();
             textBoxField.Clear();
             textBoxField.Focus();
@@ -126,7 +133,7 @@ namespace SmartTableEditor
         private protected SyntaxHighlighting Syntax = new SyntaxHighlighting();
         private void richTextBoxClasses_TextChanged(object sender, EventArgs e)
         {
-            string[] collectionGold = { "string", "int", "datetime", "List"};
+            string[] collectionGold = { "string", "int", "datetime", "List" };
 
             Syntax.Highlighting(richTextBoxClasses,
                 collectionGold,
@@ -135,5 +142,19 @@ namespace SmartTableEditor
         }
         #endregion
 
+        private void textBoxType_Enter(object sender, EventArgs e)
+        {
+            LoadTypesInTextBox(textBoxField, textBoxType);
+        }
+
+        private void btnGenerateScript_Click(object sender, EventArgs e)
+        {
+     
+        }
+
+        private void CreateTable_Leave(object sender, EventArgs e)
+        {
+            new JSON("Resource/Settings/AutoInserTypes.json").Write(ref _feilds);
+        }
     }
 }

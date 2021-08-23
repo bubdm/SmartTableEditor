@@ -1,0 +1,18 @@
+[
+  {
+    "NameFeild": "id",
+    "Value": "int"
+  },
+  {
+    "NameFeild": "name",
+    "Value": "string"
+  },
+  {
+    "NameFeild": "quantity",
+    "Value": "int"
+  },
+  {
+    "NameFeild": "money",
+    "Value": "int"
+  }
+]
