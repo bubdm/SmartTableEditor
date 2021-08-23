@@ -30,15 +30,12 @@ namespace SmartTableEditor
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.btnFC = new System.Windows.Forms.Button();
-            this.btnSQL = new System.Windows.Forms.Button();
-            this.panelClasses = new System.Windows.Forms.Panel();
-            this.richTextBoxClasses = new System.Windows.Forms.RichTextBox();
             this.panelLeft = new System.Windows.Forms.Panel();
+            this.panelWorkArea = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnGenerateScript = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxType = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxField = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,15 +45,18 @@ namespace SmartTableEditor
             this.textBoxTable = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddTable = new System.Windows.Forms.Button();
-            this.panelWorkArea = new System.Windows.Forms.Panel();
-            this.textBoxType = new System.Windows.Forms.TextBox();
+            this.panelClasses = new System.Windows.Forms.Panel();
+            this.richTextBoxClasses = new System.Windows.Forms.RichTextBox();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.btnSQL = new System.Windows.Forms.Button();
+            this.btnFC = new System.Windows.Forms.Button();
             this.panelMain.SuspendLayout();
-            this.panelTop.SuspendLayout();
-            this.panelClasses.SuspendLayout();
             this.panelLeft.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelClasses.SuspendLayout();
+            this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMain
@@ -70,65 +70,6 @@ namespace SmartTableEditor
             this.panelMain.Size = new System.Drawing.Size(1058, 765);
             this.panelMain.TabIndex = 0;
             // 
-            // panelTop
-            // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(28)))), ((int)(((byte)(40)))));
-            this.panelTop.Controls.Add(this.btnSQL);
-            this.panelTop.Controls.Add(this.btnFC);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1058, 40);
-            this.panelTop.TabIndex = 1;
-            // 
-            // btnFC
-            // 
-            this.btnFC.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnFC.FlatAppearance.BorderSize = 0;
-            this.btnFC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(76)))));
-            this.btnFC.Location = new System.Drawing.Point(0, 0);
-            this.btnFC.Name = "btnFC";
-            this.btnFC.Size = new System.Drawing.Size(60, 40);
-            this.btnFC.TabIndex = 7;
-            this.btnFC.Text = "FC";
-            this.btnFC.UseVisualStyleBackColor = true;
-            // 
-            // btnSQL
-            // 
-            this.btnSQL.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnSQL.FlatAppearance.BorderSize = 0;
-            this.btnSQL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSQL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(76)))));
-            this.btnSQL.Location = new System.Drawing.Point(60, 0);
-            this.btnSQL.Name = "btnSQL";
-            this.btnSQL.Size = new System.Drawing.Size(60, 40);
-            this.btnSQL.TabIndex = 8;
-            this.btnSQL.Text = "SQL";
-            this.btnSQL.UseVisualStyleBackColor = true;
-            // 
-            // panelClasses
-            // 
-            this.panelClasses.Controls.Add(this.richTextBoxClasses);
-            this.panelClasses.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelClasses.Location = new System.Drawing.Point(858, 40);
-            this.panelClasses.Name = "panelClasses";
-            this.panelClasses.Size = new System.Drawing.Size(200, 725);
-            this.panelClasses.TabIndex = 27;
-            // 
-            // richTextBoxClasses
-            // 
-            this.richTextBoxClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
-            this.richTextBoxClasses.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxClasses.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBoxClasses.ForeColor = System.Drawing.SystemColors.Info;
-            this.richTextBoxClasses.Location = new System.Drawing.Point(0, 0);
-            this.richTextBoxClasses.Name = "richTextBoxClasses";
-            this.richTextBoxClasses.Size = new System.Drawing.Size(200, 725);
-            this.richTextBoxClasses.TabIndex = 0;
-            this.richTextBoxClasses.Text = "";
-            this.richTextBoxClasses.TextChanged += new System.EventHandler(this.richTextBoxClasses_TextChanged);
-            // 
             // panelLeft
             // 
             this.panelLeft.Controls.Add(this.panelWorkArea);
@@ -140,6 +81,14 @@ namespace SmartTableEditor
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(858, 725);
             this.panelLeft.TabIndex = 28;
+            // 
+            // panelWorkArea
+            // 
+            this.panelWorkArea.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelWorkArea.Location = new System.Drawing.Point(0, 204);
+            this.panelWorkArea.Name = "panelWorkArea";
+            this.panelWorkArea.Size = new System.Drawing.Size(858, 521);
+            this.panelWorkArea.TabIndex = 29;
             // 
             // panel3
             // 
@@ -178,6 +127,15 @@ namespace SmartTableEditor
             this.panel2.Size = new System.Drawing.Size(858, 114);
             this.panel2.TabIndex = 27;
             this.panel2.Visible = false;
+            // 
+            // textBoxType
+            // 
+            this.textBoxType.Location = new System.Drawing.Point(137, 38);
+            this.textBoxType.Name = "textBoxType";
+            this.textBoxType.Size = new System.Drawing.Size(461, 26);
+            this.textBoxType.TabIndex = 3;
+            this.textBoxType.Text = "string";
+            this.textBoxType.Enter += new System.EventHandler(this.textBoxType_Enter);
             // 
             // label3
             // 
@@ -276,21 +234,64 @@ namespace SmartTableEditor
             this.btnAddTable.UseVisualStyleBackColor = false;
             this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
-            // panelWorkArea
+            // panelClasses
             // 
-            this.panelWorkArea.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelWorkArea.Location = new System.Drawing.Point(0, 204);
-            this.panelWorkArea.Name = "panelWorkArea";
-            this.panelWorkArea.Size = new System.Drawing.Size(858, 521);
-            this.panelWorkArea.TabIndex = 29;
+            this.panelClasses.Controls.Add(this.richTextBoxClasses);
+            this.panelClasses.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelClasses.Location = new System.Drawing.Point(858, 40);
+            this.panelClasses.Name = "panelClasses";
+            this.panelClasses.Size = new System.Drawing.Size(200, 725);
+            this.panelClasses.TabIndex = 27;
             // 
-            // textBoxType
+            // richTextBoxClasses
             // 
-            this.textBoxType.Location = new System.Drawing.Point(137, 38);
-            this.textBoxType.Name = "textBoxType";
-            this.textBoxType.Size = new System.Drawing.Size(461, 26);
-            this.textBoxType.TabIndex = 3;
-            this.textBoxType.Text = "string";
+            this.richTextBoxClasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(36)))), ((int)(((byte)(51)))));
+            this.richTextBoxClasses.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxClasses.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBoxClasses.ForeColor = System.Drawing.SystemColors.Info;
+            this.richTextBoxClasses.Location = new System.Drawing.Point(0, 0);
+            this.richTextBoxClasses.Name = "richTextBoxClasses";
+            this.richTextBoxClasses.Size = new System.Drawing.Size(200, 725);
+            this.richTextBoxClasses.TabIndex = 0;
+            this.richTextBoxClasses.Text = "";
+            this.richTextBoxClasses.TextChanged += new System.EventHandler(this.richTextBoxClasses_TextChanged);
+            // 
+            // panelTop
+            // 
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(28)))), ((int)(((byte)(40)))));
+            this.panelTop.Controls.Add(this.btnSQL);
+            this.panelTop.Controls.Add(this.btnFC);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(1058, 40);
+            this.panelTop.TabIndex = 1;
+            // 
+            // btnSQL
+            // 
+            this.btnSQL.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnSQL.FlatAppearance.BorderSize = 0;
+            this.btnSQL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSQL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(76)))));
+            this.btnSQL.Location = new System.Drawing.Point(60, 0);
+            this.btnSQL.Name = "btnSQL";
+            this.btnSQL.Size = new System.Drawing.Size(60, 40);
+            this.btnSQL.TabIndex = 8;
+            this.btnSQL.Text = "SQL";
+            this.btnSQL.UseVisualStyleBackColor = true;
+            // 
+            // btnFC
+            // 
+            this.btnFC.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFC.FlatAppearance.BorderSize = 0;
+            this.btnFC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(191)))), ((int)(((byte)(76)))));
+            this.btnFC.Location = new System.Drawing.Point(0, 0);
+            this.btnFC.Name = "btnFC";
+            this.btnFC.Size = new System.Drawing.Size(60, 40);
+            this.btnFC.TabIndex = 7;
+            this.btnFC.Text = "FC";
+            this.btnFC.UseVisualStyleBackColor = true;
             // 
             // CreateTable
             // 
@@ -308,14 +309,14 @@ namespace SmartTableEditor
             this.Text = "CreateTable";
             this.Load += new System.EventHandler(this.CreateTable_Load);
             this.panelMain.ResumeLayout(false);
-            this.panelTop.ResumeLayout(false);
-            this.panelClasses.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelClasses.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

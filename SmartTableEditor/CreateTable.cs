@@ -28,6 +28,19 @@ namespace SmartTableEditor
         }
         private List<Table> _tables = new List<Table>();
 
+        public class Feilds
+        {
+            public Feilds(string nameFeild, string value)
+            {
+                NameFeild = nameFeild;
+                Value = value;
+            }
+
+            public string NameFeild { get; set; }
+            public string Value { get; set; }
+        }
+        private List<Feilds> _feilds = new List<Feilds>();
+
         public CreateTable()
         {
             InitializeComponent();
@@ -73,6 +86,19 @@ namespace SmartTableEditor
                 stringBuilder.AppendLine();
             }
             richTextBoxClasses.Text = stringBuilder.ToString();
+        }
+
+        void LoadTypesInTextBox(TextBox field, TextBox type)
+        {
+            _feilds.Add(new Feilds("name", "string"));
+            _feilds.Add(new Feilds("ID", "int"));
+            _feilds.Add(new Feilds("last name", "string"));
+
+            foreach (var item in _feilds)
+            {
+                if (field.Text == item.NameFeild)
+                    type.Text = item.Value;
+            }
         }
         #endregion
 
@@ -135,5 +161,9 @@ namespace SmartTableEditor
         }
         #endregion
 
+        private void textBoxType_Enter(object sender, EventArgs e)
+        {
+            LoadTypesInTextBox(textBoxField,textBoxType);
+        }
     }
 }
