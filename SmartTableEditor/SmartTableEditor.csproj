@@ -53,10 +53,10 @@
     <Compile Include="Classes\WorkWithTables\ITable.cs" />
     <Compile Include="Classes\WorkWithTables\SQL.cs" />
     <Compile Include="Classes\WorkWithTables\WorkWithTables.cs" />
-    <Compile Include="Classes\WriteToJSONFile\Feilds.cs" />
-    <Compile Include="Classes\WriteToJSONFile\IJSON.cs" />
-    <Compile Include="Classes\WriteToJSONFile\JSON.cs" />
-    <Compile Include="Classes\WriteToJSONFile\Table.cs" />
+    <Compile Include="Classes\WorkWithJSON\Feilds.cs" />
+    <Compile Include="Classes\WorkWithJSON\IJSON.cs" />
+    <Compile Include="Classes\WorkWithJSON\JSON.cs" />
+    <Compile Include="Classes\WorkWithJSON\Table.cs" />
     <Compile Include="CreateTable.cs">
       <SubType>Form</SubType>
     </Compile>

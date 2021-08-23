@@ -16,28 +16,31 @@ namespace SmartTableEditor.Classes.WriteToJSONFile
         }
 
         private string Path { get; set; }
+
         public void Read(ref List<Table> tables)
         {
-            throw new NotImplementedException();
+            if (!File.Exists(Path))
+                return;
+            tables = JsonConvert.DeserializeObject<List<Table>>(File.ReadAllText(Path));
         }
 
         public void Write(ref List<Table> tables)
         {
-            throw new NotImplementedException();
+            string json = JsonConvert.SerializeObject(tables);
+            File.WriteAllText(Path, json);
         }
 
         public void Read(ref List<Feilds> feilds)
         {
             if (!File.Exists(Path))
                 return;
-
             feilds = JsonConvert.DeserializeObject<List<Feilds>>(File.ReadAllText(Path));
         }
 
         public void Write(ref List<Feilds> feilds)
         {
-            string json = JsonConvert.SerializeObject(feilds, Formatting.Indented);
-            File.WriteAllText(Path,json);
+            string json = JsonConvert.SerializeObject(feilds);
+            File.WriteAllText(Path, json);
         }
     }
 }
