@@ -167,7 +167,7 @@ namespace SmartTableEditor
             string[] collectionGold = { "public", "private", "protected", "void", "get", "set", "virtual" };
             string[] collectionGreen = { "class", "IList", "ICollection" };
 
-            richTextBox.TextChanged += (ss, ee) =>  Syntax.Highlighting(richTextBox,Variables.ListTypes,collectionGold,collectionGreen, Color.FromArgb(255, 191, 76), Color.FromArgb(23, 185, 120), Color.FromArgb(30, 129, 206));
+            richTextBox.TextChanged += (ss, ee) =>  Syntax.Highlighting(richTextBox,collectionGold,collectionGreen, Variables.ListTypes, Color.FromArgb(255, 191, 76), Color.FromArgb(23, 185, 120), Color.FromArgb(30, 129, 206));
 
             var call_table = new WorkWithTables(SelectArh.FC);
             foreach (var item in _tables)
