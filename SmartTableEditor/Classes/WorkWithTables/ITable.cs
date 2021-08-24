@@ -9,8 +9,8 @@ namespace SmartTableEditor.Classes
 {
     public interface ITable
     {
-        void CreateTable(TextBox textBox, RichTextBox richTextBox);
-        void CreateField(TextBox textBox, RichTextBox richTextBox, ComboBox comboBox);
+        void CreateTable(string feild, RichTextBox richTextBox);
+        void CreateField(string name, string type, RichTextBox richTextBox);
         void CloseTable(RichTextBox richTextBox);
     }
 }

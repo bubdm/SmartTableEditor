@@ -9,25 +9,24 @@ namespace SmartTableEditor.Classes
 {
     class SQL : ITable
     {
-        public void CreateTable(TextBox textBox, RichTextBox richTextBox)
+        public void CreateTable(string feild, RichTextBox richTextBox)
         {
-            if (string.IsNullOrEmpty(textBox.Text) | string.IsNullOrWhiteSpace(textBox.Text))
+            if (string.IsNullOrEmpty(feild) | string.IsNullOrWhiteSpace(feild))
                 return;
 
-            richTextBox.AppendText($"CREATE TABLE {textBox.Text} (");
+            richTextBox.AppendText($"CREATE TABLE {feild} (");
         }
 
-        public void CreateField(TextBox textBox, RichTextBox richTextBox, ComboBox comboBox)
+        public void CreateField(string name, string type, RichTextBox richTextBox)
         {
-            if (string.IsNullOrEmpty(textBox.Text) | string.IsNullOrWhiteSpace(textBox.Text) | string.IsNullOrEmpty(comboBox.Text) | string.IsNullOrWhiteSpace(comboBox.Text))
+            if (string.IsNullOrEmpty(name) | string.IsNullOrWhiteSpace(name)
+                | string.IsNullOrEmpty(type) | string.IsNullOrWhiteSpace(type))
                 return;
 
             StringBuilder stringBuilder = new StringBuilder(70);
 
 
-            richTextBox.AppendText($"{Environment.NewLine}   {textBox.Text} {comboBox.Text.ToUpper()} {stringBuilder},");
-
-            comboBox.Text = "";
+            richTextBox.AppendText($"{Environment.NewLine}   {name} {type.ToUpper()} {stringBuilder},");
         }
 
         public void CloseTable(RichTextBox richTextBox)

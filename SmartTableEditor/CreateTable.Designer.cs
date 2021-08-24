@@ -291,6 +291,7 @@ namespace SmartTableEditor
             this.btnFC.TabIndex = 7;
             this.btnFC.Text = "FC";
             this.btnFC.UseVisualStyleBackColor = true;
+            this.btnFC.Click += new System.EventHandler(this.btnFC_Click);
             // 
             // CreateTable
             // 

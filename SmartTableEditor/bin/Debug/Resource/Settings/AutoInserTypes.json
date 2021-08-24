@@ -1,1 +1,1 @@
-[{"NameFeild":"id","Value":"int"},{"NameFeild":"name","Value":"string"},{"NameFeild":"quantity","Value":"int"},{"NameFeild":"money","Value":"int"},{"NameFeild":"date","Value":"datetime"}]
+[{"NameFeild":"id","Value":"int"},{"NameFeild":"name","Value":"string"},{"NameFeild":"quantity","Value":"int"},{"NameFeild":"money","Value":"int"},{"NameFeild":"date","Value":"datetime"},{"NameFeild":"asdas","Value":"list<string>"},{"NameFeild":"fio","Value":"string"}]

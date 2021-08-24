@@ -9,23 +9,22 @@ namespace SmartTableEditor.Classes
 {
     class FirsCode : ITable
     {
-        public void CreateTable(TextBox textBox, RichTextBox richTextBox)
+        public void CreateTable(string feild, RichTextBox richTextBox)
         {
-            if (string.IsNullOrEmpty(textBox.Text) | string.IsNullOrWhiteSpace(textBox.Text))
+            if (string.IsNullOrEmpty(feild) | string.IsNullOrWhiteSpace(feild))
                 return;
 
-            richTextBox.AppendText($"public class {textBox.Text}{Environment.NewLine}");
+            richTextBox.AppendText($"public class {feild}{Environment.NewLine}");
             richTextBox.AppendText("{");
         }
 
-        public void CreateField(TextBox textBox, RichTextBox richTextBox, ComboBox comboBox)
+        public void CreateField(string name, string type, RichTextBox richTextBox)
         {
-            if (string.IsNullOrEmpty(textBox.Text) | string.IsNullOrWhiteSpace(textBox.Text) | string.IsNullOrEmpty(comboBox.Text) | string.IsNullOrWhiteSpace(comboBox.Text))
+            if (string.IsNullOrEmpty(name) | string.IsNullOrWhiteSpace(name)
+                | string.IsNullOrEmpty(type) | string.IsNullOrWhiteSpace(type))
                 return;
 
-            richTextBox.AppendText(Environment.NewLine + "    public " + comboBox.Text + " " + textBox.Text + " { get; set; }");
-
-            comboBox.Text = "";
+            richTextBox.AppendText(Environment.NewLine + "    public " + type + " " + name + " { get; set; }");
         }
 
         public void CloseTable(RichTextBox richTextBox)

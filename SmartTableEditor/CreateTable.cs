@@ -93,8 +93,6 @@ namespace SmartTableEditor
         {
             ShowPanels();
             _tables.Add(new Table(textBoxTable.Text));
-            //var call_table = new WorkWithTables(SelectArh.SQL);
-            //call_table.Table.CreateTable(textBoxTable, richTextBoxResultSQL);
             UpdateAreaClasses();
         }
 
@@ -133,10 +131,8 @@ namespace SmartTableEditor
         private protected SyntaxHighlighting Syntax = new SyntaxHighlighting();
         private void richTextBoxClasses_TextChanged(object sender, EventArgs e)
         {
-            string[] collectionGold = { "string", "int", "datetime", "List" };
-
             Syntax.Highlighting(richTextBoxClasses,
-                collectionGold,
+                Variables.ListTypes,
                 Color.FromArgb(255, 191, 76)
                 );
         }
@@ -149,12 +145,50 @@ namespace SmartTableEditor
 
         private void btnGenerateScript_Click(object sender, EventArgs e)
         {
-     
+
         }
 
         private void CreateTable_Leave(object sender, EventArgs e)
         {
             new JSON("Resource/Settings/AutoInserTypes.json").Write(ref _feilds);
+        }
+
+        private void btnFC_Click(object sender, EventArgs e)
+        {
+            RichTextBox richTextBox = new RichTextBox
+            {
+                BackColor = Variables.ColorDarkBlue,
+                ForeColor = Variables.ColorWhite,
+                Dock = DockStyle.Left,
+                BorderStyle = BorderStyle.None,
+                Width = 400,
+                Name = "RichTextBoxFC",
+            };
+            string[] collectionGold = { "public", "private", "protected", "void", "get", "set", "virtual" };
+            string[] collectionGreen = { "class", "IList", "ICollection" };
+
+            richTextBox.TextChanged += (ss, ee) =>  Syntax.Highlighting(richTextBox,Variables.ListTypes,collectionGold,collectionGreen, Color.FromArgb(255, 191, 76), Color.FromArgb(23, 185, 120), Color.FromArgb(30, 129, 206));
+
+            var call_table = new WorkWithTables(SelectArh.FC);
+            foreach (var item in _tables)
+            {
+                call_table.Table.CreateTable(item.Name, richTextBox);
+                foreach (var item_2 in item.Fields)
+                {
+                    call_table.Table.CreateField(item_2.Key, item_2.Value, richTextBox);
+                }
+                call_table.Table.CloseTable(richTextBox);
+            }
+
+            panelWorkArea.Controls.Add(richTextBox);
+        }
+
+        void RichTextBox_TextChanged(object sender, EventArgs e)
+        {
+            //Syntax.Highlighting(richTextBox,
+            //Variables.ListTypes,
+            //Color.FromArgb(255, 191, 76)
+            //);
         }
     }
 }
